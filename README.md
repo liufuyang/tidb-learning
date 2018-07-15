@@ -23,7 +23,7 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
           -v $(pwd)/notebook:/home/jovyan \
           liufuyang/tispark-notebook
         ```
-    
+* Take a look at https://github.com/pingcap/tidb-docker-compose
 * Take a look at https://github.com/pingcap/tispark/tree/master/python
 
 ## Param calcuation:

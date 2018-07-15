@@ -1,0 +1,21 @@
+version: '2.1'
+
+services:
+  tispark-notebook:
+    image: liufuyang/tispark-notebook:latest
+    build: docker
+    volumes:
+      - ./notebook:/home/jovyan
+      - ./docker/spark-defaults.conf:/usr/lib/python2.7/site-packages/pyspark/conf/spark-defaults.conf:ro
+    environment:
+      SPARK_DRIVER_MEMORY: 6G
+      SPARK_EXECUTOR_MEMORY: 6G
+      SPARK_EXECUTOR_CORES: 3
+      MASTER: spark://tispark-master:7077
+    ports:
+      - "8888:8888"
+
+networks:
+  default:
+    external:
+      name: tidb-docker-compose_default

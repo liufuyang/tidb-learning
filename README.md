@@ -8,12 +8,12 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 ## Step to test Ti-DB out
 
 * Start a TiDB docker-compose 
-    * `git clone https://github.com/pingcap/tidb-docker-compose`
+    * `git clone git@github.com/pingcap/tidb-docker-compose.git`
     * `cd tidb-docker-compose`
     * `docker-compose up -d`
 * Start our tispark-notebook and wire it onto the TiDB/TiSpark cluster we just created
     * cd into your favorite workplace directory
-    * `git clone https://github.com/liufuyang/tidb-learning`
+    * `git clone git@github.com/liufuyang/tidb-learning.git`
     * `cd tidb-learning`
     * `docker-compose up`
     * visit `localhost:8888`, try run the Demo notebook

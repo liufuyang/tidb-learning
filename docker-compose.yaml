@@ -3,7 +3,7 @@ version: '2.1'
 services:
   tispark-notebook:
     image: liufuyang/tispark-notebook:latest
-    build: docker
+    # build: docker
     volumes:
       - ./notebook:/home/jovyan
       - ./docker/spark-defaults.conf:/usr/lib/python2.7/site-packages/pyspark/conf/spark-defaults.conf:ro

@@ -1,6 +1,7 @@
 p2-venv
 metastore_db
 notebook/.ipython
+notebook/.jupyter
 notebook/.local
 
 # Byte-compiled / optimized / DLL files

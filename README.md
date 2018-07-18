@@ -8,12 +8,12 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 ## Step to test Ti-DB out
 
 * Start a TiDB docker-compose 
-    * `git clone git@github.com/pingcap/tidb-docker-compose.git`
+    * `git clone https://github.com/pingcap/tidb-docker-compose`
     * `cd tidb-docker-compose`
     * `docker-compose up -d`
 * Start our tispark-notebook and wire it onto the TiDB/TiSpark cluster we just created
     * cd into your favorite workplace directory
-    * `git clone git@github.com/liufuyang/tidb-learning.git`
+    * `git clone https://github.com/liufuyang/tidb-learning`
     * `cd tidb-learning`
     * `docker-compose up`
     * visit `localhost:8888`, try run the Demo notebook
@@ -28,7 +28,10 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 
 ## Test Ti-DB in local kubernetes:
     * `brew install md5sha1sum`  ## if you have errors, do this `xcode-select --install`
+    * `cp /etc/localtime ${HOME}/localtime`
     * `./dind-cluster-v1.10.sh`, or check this awesome [kubeadm-dind-cluster](https://github.com/kubernetes-sigs/kubeadm-dind-cluster)
+    * `tidb-operator/charts`
+    * `kubectl logs -n pingcap -l name=tidb-scheduler -c tidb-scheduler`
     
 
 ## Param calcuation:

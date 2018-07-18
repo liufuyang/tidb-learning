@@ -26,6 +26,11 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 * Take a look at https://github.com/pingcap/tidb-docker-compose
 * Take a look at https://github.com/pingcap/tispark/tree/master/python
 
+## Test Ti-DB in local kubernetes:
+    * `brew install md5sha1sum`  ## if you have errors, do this `xcode-select --install`
+    * `./dind-cluster-v1.10.sh`, or check this awesome [kubeadm-dind-cluster](https://github.com/kubernetes-sigs/kubeadm-dind-cluster)
+    
+
 ## Param calcuation:
 * --executor-cores = 3
 * 3 core per node (6 in total via docker locally, but 2 slaves so each has 3)

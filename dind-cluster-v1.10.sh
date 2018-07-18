@@ -671,6 +671,7 @@ function dind::run {
          --hostname "${container_name}" \
          -l mirantis.kubeadm_dind_cluster \
          -v ${HOME}/.docker/certs.d:/etc/docker/certs.d \
+         -v ${HOME}/localtime:/etc/localtime:ro \
          -v ${volume_name}:/dind \
          ${opts[@]+"${opts[@]}"} \
          "${DIND_IMAGE}" \

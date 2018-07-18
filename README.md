@@ -29,9 +29,17 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 ## Test Ti-DB in local kubernetes:
     * `brew install md5sha1sum`  ## if you have errors, do this `xcode-select --install`
     * `cp /etc/localtime ${HOME}/localtime`
-    * `./dind-cluster-v1.10.sh`, or check this awesome [kubeadm-dind-cluster](https://github.com/kubernetes-sigs/kubeadm-dind-cluster)
-    * `tidb-operator/charts`
-    * `kubectl logs -n pingcap -l name=tidb-scheduler -c tidb-scheduler`
+    * `./dind-cluster-v1.10.sh up`, or check this awesome [kubeadm-dind-cluster](https://github.com/kubernetes-sigs/kubeadm-dind-cluster)
+    * `http://localhost:8080/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy`
+    * `cd tidb-operator/charts`
+    * `helm install tidb-operator --name tidb-operator --namespace pingcap`
+    * Verify installation
+    * `helm install tidb-cluster --namespace=tidb-cluster-test --name=tidb-cluster-test`
+    * Verify installation
+    * Check service ports `kubectl get svc --namespace=tidb-cluster-test`
+    * For local db connection: `kubectl port-forward demo-cluster-tidb-9kxfr 4000:4000 -n=tidb-cluster-test`
+    * To visit Grafana locally `kubectl port-forward demo-cluster-monitor-7d7b797648-kss5k 3000:3000 -n tidb-cluster-test`
+    * To debug and see logs `kubectl logs -n pingcap -l name=tidb-scheduler -c tidb-scheduler`
     
 
 ## Param calcuation:

@@ -48,6 +48,13 @@ https://www.pingcap.com/blog/how_to_spin_up_an_htap_database_in_5_minutes_with_t
 * Then the number of executors per node/slave is (3 - 1) / 3 = 1.
 * We have 2 node, so --num-executors = 2 * 1 = 2
 
+Extra config for dind
+```
+# line 683 in dind-cluster-v1.10.sh
+-v ${HOME}/.docker/certs.d:/etc/docker/certs.d \
+-v ${HOME}/localtime:/etc/localtime:ro \
+```
+
 ---
 
 ## Example code in notebook
